@@ -19,6 +19,17 @@ variable "azure_sp_client_secret" {
   sensitive = true
 }
 
+variable "azuredevops_org_url" {
+  type      = string
+  nullable  = false
+}
+
+variable "azuredevops_pat" {
+  type      = string
+  nullable  = false
+  sensitive = true
+}
+
 variable "resource_group_name" {
   type     = string
   nullable = false

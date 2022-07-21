@@ -4,6 +4,10 @@ terraform {
       source = "hashicorp/azurerm"
       version = "3.14.0"
     }
+    azuredevops = {
+      source = "microsoft/azuredevops"
+      version = "0.2.2"
+    }
   }
 }
 
@@ -16,7 +20,8 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "app_grp" {
-  name      = var.resource_group_name
-  location  = var.location
+provider "azuredevops" {
+  # Configuration options
+  org_service_url = var.azuredevops_org_url
+  personal_access_token = var.azuredevops_pat
 }
