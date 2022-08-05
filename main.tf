@@ -9,6 +9,12 @@ terraform {
       version = "0.2.2"
     }
   }
+  backend "azurerm" {
+    resource_group_name  = "resourceGroup7782d62c"
+    storage_account_name = "appstoragef691e2cf"
+    container_name       = "tfstate"
+    key                  = "terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
