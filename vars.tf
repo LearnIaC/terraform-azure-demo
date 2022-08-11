@@ -1,22 +1,42 @@
-variable "azure_subscription_id" {
+variable "subscription_id" {
   type     = string
   nullable = false
 }
 
-variable "azure_tenant_id" {
+variable "tenant_id" {
   type     = string
   nullable = false
 }
 
-variable "azure_sp_client_id" {
+variable "client_id" {
   type     = string
   nullable = false
 }
 
-variable "azure_sp_client_secret" {
+variable "client_secret" {
   type      = string
   nullable  = false
   sensitive = true
+}
+
+variable "resource_group_name" {
+  type      = string
+  nullable  = false
+}
+
+variable "storage_account_name" {
+  type      = string
+  nullable  = false
+}
+
+variable "container_name" {
+  type      = string
+  nullable  = false
+}
+
+variable "key" {
+  type      = string
+  nullable  = false
 }
 
 variable "azuredevops_org_url" {
@@ -30,7 +50,7 @@ variable "azuredevops_pat" {
   sensitive = true
 }
 
-variable "resource_group_name" {
+variable "app_resource_group_name" {
   type     = string
   nullable = false
 }

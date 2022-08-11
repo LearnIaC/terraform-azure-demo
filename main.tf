@@ -9,20 +9,17 @@ terraform {
       version = "0.2.2"
     }
   }
-  backend "azurerm" {
-    resource_group_name  = "resourceGroup7782d62c"
-    storage_account_name = "appstoragef691e2cf"
-    container_name       = "tfstate"
-    key                  = "terraform.tfstate"
-  }
+  //configured via cli
+  //ex: terraform init -backend-config example.config.tfvars
+  backend "azurerm" {} 
 }
 
 provider "azurerm" {
   # Configuration options
-  subscription_id = var.azure_subscription_id
-  tenant_id       = var.azure_tenant_id
-  client_id       = var.azure_sp_client_id
-  client_secret   = var.azure_sp_client_secret
+  subscription_id = var.subscription_id
+  tenant_id       = var.tenant_id
+  client_id       = var.client_id
+  client_secret   = var.client_secret
   features {}
 }
 
